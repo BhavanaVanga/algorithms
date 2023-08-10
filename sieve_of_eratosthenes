@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+void prime_Seive_Of_Erathsthenes(int n)
+{
+	int primeS[n+1]={0};
+	for(int i=2;i<=n;i++)
+	{
+		if(primeS[i]==0)
+		{
+			for(int j=i*i;j<=n;j+=i)
+			{
+				primeS[j]=1;
+			}
+		}
+	}
+	for(int i=2;i<=n;i++)
+	{
+		if(primeS[i]==0)
+		cout<<i<<" ";
+	}
+}
+int main() {
+	// your code goes here
+	int n;
+	cin>>n;
+	prime_Seive_Of_Erathsthenes(n);
+	return 0;
+}
